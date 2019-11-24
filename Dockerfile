@@ -5,7 +5,6 @@ RUN	apk add --no-cache \
 	bash \
 	ca-certificates \
 	curl \
-	ssh \
 	git
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
