@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v1
+      - name: deploy
+        uses: pkanwar23/website@master
+        with:
+          PUSH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          HUGO_VERSION: 0.59.1
+          TARGET_REPO: pkanwar23/pkanwar23.github.io
+          PUSH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
