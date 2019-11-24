@@ -62,6 +62,7 @@ echo 'Committing the site to git and pushing'
     fi
 
     # Now add all the changes and commit and push
+    git remote set-url origin git@gitserver.com:pkanwar23/pkanwar.github.io.git
     git add . && \
     git commit -m "Publishing site $(date)" && \
     git push origin master
