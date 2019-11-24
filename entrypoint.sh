@@ -5,9 +5,9 @@ set -o pipefail
 
 echo "starting to execute script"
 
-echo 'value of environment variables' $HUGO_VERSION $PUSH_TOKEN $GITHUB_TOKEN $INPUT_REPO-TOKEN 'delimiter' $GITHUB_WORKSPACE 'delimiter' $TARGET_REPO
+# echo 'value of environment variables' $HUGO_VERSION $PUSH_TOKEN $GITHUB_TOKEN $INPUT_REPO-TOKEN 'delimiter' $GITHUB_WORKSPACE 'delimiter' $TARGET_REPO
 
-echo 'pwd: ' $pwd
+# echo 'pwd: ' $pwd
 
 if [[ -z "$PUSH_TOKEN" ]]; then
         echo "using PUSH_TOKEN env variable."
@@ -24,7 +24,7 @@ if [[ -z "$HUGO_VERSION" ]]; then
     echo 'No HUGO_VERSION was set, so defaulting to '$HUGO_VERSION
 fi
 
-echo `ls -al $GITHUB_WORKSPACE`
+# echo `ls -al $GITHUB_WORKSPACE`
 
 echo 'Downloading hugo'
 curl -sSL https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz > /tmp/hugo.tar.gz && tar -f /tmp/hugo.tar.gz -xz
