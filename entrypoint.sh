@@ -39,35 +39,44 @@ rm -fr "${BUILD_DIR}"
 TARGET_REPO_URL="https://${PUSH_TOKEN}@github.com/${TARGET_REPO}.git"
 git clone "${TARGET_REPO_URL}" "${BUILD_DIR}"
 
-# echo `ls -al build`
+echo `ls -al build`
 
 echo 'Moving the content over'
 cp -r public/* build/
 
-git remote set-url origin git@gitserver.com:pkanwar23/pkanwar.github.io.git
+cd "${BUILD_DIR}"
+echo `checking build directory`
+echo `ls -al build`
+git add .
+echo `added file`
+echo `git status`
+git commit -a -m "Publishing site $(date)"
+git push 
 
-echo 'Committing the site to git and pushing'
-(
-    if git config --get user.name; then
-        git config --global user.name "${GITHUB_ACTOR}"
-    fi
+# git remote set-url origin git@gitserver.com:pkanwar23/pkanwar.github.io.git
 
-    if ! git config --get user.email; then
-        git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-    fi
+# echo 'Committing the site to git and pushing'
+# (
+#    if git config --get user.name; then
+#        git config --global user.name "${GITHUB_ACTOR}"
+#    fi
 
-    cd "${BUILD_DIR}"
+#    if ! git config --get user.email; then
+#        git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+#    fi
 
-    if git diff --exit-code; then
-        echo "There is nothing to commit, so aborting"
-        exit 0
-    fi
+#    cd "${BUILD_DIR}"
+
+#    if git diff --exit-code; then
+#        echo "There is nothing to commit, so aborting"
+#        exit 0
+#    fi
 
     # Now add all the changes and commit and push
-    git add . && \
-    git commit -m "Publishing site $(date)" && \
-    git push origin master
-)
+#    git add . && \
+#    git commit -m "Publishing site $(date)" && \
+#    git push origin master
+# )
 
 echo 'Complete'
 
