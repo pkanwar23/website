@@ -63,7 +63,6 @@ echo 'Committing the site to git and pushing'
 
     # Now add all the changes and commit and push
     git add . && \
-    git remote set-url origin https://${GITHUB_ACTOR}:${PUSH_TOKEN}@github.com/${GITHUB_REPOSITORY}
     git commit -m "Publishing site $(date)" && \
     git push origin master
 )
