@@ -45,8 +45,16 @@ echo 'Moving the content over'
 cp -r public/* build/
 
 cd "${BUILD_DIR}"
-echo `checking build directory`
-echo `ls -al build`
+echo "checking build directory"
+echo `ls -al`
+
+if git config --get user.name; then
+      git config --global user.name "${GITHUB_ACTOR}"
+fi
+
+if ! git config --get user.email; then
+      git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+fi
 git add .
 echo `added file`
 echo `git status`
