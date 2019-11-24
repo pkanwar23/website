@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v1
-      #- name: Deploy the site
+      #- name: Deploy
       #  uses: benmatselby/hugo-deploy-gh-pages@master
       #  env:
       #    HUGO_VERSION: 0.57.2
