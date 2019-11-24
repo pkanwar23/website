@@ -39,7 +39,7 @@ rm -fr "${BUILD_DIR}"
 TARGET_REPO_URL="https://${PUSH_TOKEN}@github.com/${TARGET_REPO}.git"
 git clone "${TARGET_REPO_URL}" "${BUILD_DIR}"
 
-echo `ls -al build`
+# echo `ls -al build`
 
 echo 'Moving the content over'
 cp -r public/* build/
