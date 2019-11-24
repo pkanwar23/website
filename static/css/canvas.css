@@ -1,0 +1,23 @@
+html {
+    background-color: #fefefe
+}
+
+body {
+    color: #454545;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 1em;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    line-height:1.2
+}
+
+a {
+    color: #07a
+}
+
+a:visited {
+    color: #941352
+}

@@ -1,0 +1,13 @@
+<script>
+function imageClick(url) {
+    window.location = url;
+}
+</script>
+{{ partial "header.html" . }}
+	<main>
+        <header>
+        <link rel="stylesheet" href="/css/canvas.css" type="text/css">
+         <h1>{{.Title}}</h1>
+        </header>
+        {{ .Content }}
+	</main>
