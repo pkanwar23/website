@@ -7,16 +7,15 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v1
-      - name: Deploy the site
-        uses: benmatselby/hugo-deploy-gh-pages@master
-        env:
-          HUGO_VERSION: 0.57.2
-          TARGET_REPO: pkanwar23/pkanwar23.github.io
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # - name: deploy
-      #  run: |
-      #    shellcheck *.sh
+      #- name: Deploy the site
+      #  uses: benmatselby/hugo-deploy-gh-pages@master
       #  env:
-      #    HUGO_VERSION: 0.59.1
+      #    HUGO_VERSION: 0.57.2
       #    TARGET_REPO: pkanwar23/pkanwar23.github.io
-      #    PUSH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #    TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: deploy
+        uses: pkanwar23/website@master
+        env:
+           HUGO_VERSION: 0.59.1
+           TARGET_REPO: pkanwar23/pkanwar23.github.io
+           PUSH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
