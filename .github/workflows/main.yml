@@ -8,6 +8,8 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v1
       - name: deploy
+        run: |
+          shellcheck *.sh
         env:
           HUGO_VERSION: 0.59.1
           TARGET_REPO: pkanwar23/pkanwar23.github.io
