@@ -60,7 +60,7 @@ git add .
 echo "added file"
 # echo `git status`
 git commit -a -m "Publishing site"
-git push 
+git push origin
 
 # git remote set-url origin git@gitserver.com:pkanwar23/pkanwar.github.io.git
 
