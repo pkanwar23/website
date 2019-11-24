@@ -55,8 +55,9 @@ fi
 if ! git config --get user.email; then
       git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 fi
+git remote set-url origin git@gitserver.com:pkanwar23/pkanwar.github.io.git
 git add .
-echo `added file`
+echo "added file"
 echo `git status`
 git commit -a -m "Publishing site $(date)"
 git push 
