@@ -12,7 +12,7 @@ jobs:
         env:
           HUGO_VERSION: 0.57.2
           TARGET_REPO: pkanwar23/pkanwar23.github.io
-          TOKEN: ${{ secrets.TOKEN }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # - name: deploy
       #  run: |
       #    shellcheck *.sh
