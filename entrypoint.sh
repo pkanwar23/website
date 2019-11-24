@@ -56,11 +56,17 @@ if ! git config --get user.email; then
       git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 fi
 # git remote set-url origin git@gitserver.com:pkanwar23/pkanwar.github.io.git
-git add .
-echo "added file"
+ git add --all && \
+ git commit -m "Github Action Build ${GITHUB_SHA} `date +'%Y-%m-%d %H:%M:%S'`" --allow-empty && \
+ git remote set-url origin https://${GITHUB_ACTOR}:${PUSH_TOKEN}@github.com/${TARGET_REPO}
+ git push origin master
+
+
+# git add .
+#echo "added file"
 # echo `git status`
-git commit -m "Publishing site"
-git push origin
+#git commit -m "Publishing site"
+#git push origin
 
 # git remote set-url origin git@gitserver.com:pkanwar23/pkanwar.github.io.git
 
