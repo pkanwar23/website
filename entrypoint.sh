@@ -26,15 +26,16 @@ fi
 
 # echo `ls -al $GITHUB_WORKSPACE`
 
-echo 'Downloading hugo'
-curl -sSL https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz > /tmp/hugo.tar.gz && tar -f /tmp/hugo.tar.gz -xz
+# echo 'Downloading hugo'
+# curl -sSL https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz > /tmp/hugo.tar.gz && tar -f /tmp/hugo.tar.gz -xz
 
-echo 'Download complete'
-./hugo
+# echo 'Download complete'
+# ./hugo
 
-echo 'Cloning the GitHub Pages repo'
-BUILD_DIR=build
-rm -fr "${BUILD_DIR}"
+`echo "this is a test"> test-github.txt`
+# echo 'Cloning the GitHub Pages repo' 
+# BUILD_DIR=build
+# rm -fr "${BUILD_DIR}"
 
 # TARGET_REPO_URL="https://${PUSH_TOKEN}@github.com/${TARGET_REPO}.git"
 # git clone "${TARGET_REPO_URL}" "${BUILD_DIR}"
@@ -45,8 +46,9 @@ rm -fr "${BUILD_DIR}"
 # cp -r public/* build/
 
 # cd "${BUILD_DIR}"
-cd public
-echo "checking public directory"
+# cd public
+# echo "checking public directory"
+echo "check file"
 echo `ls -al`
 
 if git config --get user.name; then
@@ -56,11 +58,15 @@ fi
 if ! git config --get user.email; then
       git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 fi
+
+git add test-github.txt
+git commit -m "test"
+git push orgin master
 # git remote set-url origin git@gitserver.com:pkanwar23/pkanwar.github.io.git
- git add --all && \
- git commit -m "Github Action Build ${GITHUB_SHA} `date +'%Y-%m-%d %H:%M:%S'`" --allow-empty && \
+# git add --all && \
+# git commit -m "Github Action Build ${GITHUB_SHA} `date +'%Y-%m-%d %H:%M:%S'`" --allow-empty && \
  # git remote set-url origin https://${GITHUB_ACTOR}:${PUSH_TOKEN}@github.com/${TARGET_REPO}
- git push origin master
+# git push origin master
 
 
 # git add .
