@@ -32,6 +32,8 @@ fi
 # echo 'Download complete'
 # ./hugo
 
+git checkout -b temp_branch
+
 `echo "this is a test"> test-github.txt`
 # echo 'Cloning the GitHub Pages repo' 
 # BUILD_DIR=build
@@ -61,7 +63,7 @@ fi
 
 git add test-github.txt
 git commit -m "test"
-git push orgin master
+git push orgin temp_branch
 # git remote set-url origin git@gitserver.com:pkanwar23/pkanwar.github.io.git
 # git add --all && \
 # git commit -m "Github Action Build ${GITHUB_SHA} `date +'%Y-%m-%d %H:%M:%S'`" --allow-empty && \
